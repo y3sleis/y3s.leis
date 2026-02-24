@@ -1,250 +1,55 @@
 @import url(fontawesome-all.min.css);
 @import url("https://fonts.googleapis.com/css?family=Merriweather:300,700,300italic,700italic|Source+Sans+Pro:900");
 
-/*
-	Massively by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
+/* Reset and Basic Styles */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+body { line-height: 1; -webkit-text-size-adjust: none; background-color: #ffffff; background-attachment: fixed; background-size: cover; }
+ol, ul { list-style: none; }
 
-html, body, div, span, applet, object,
-iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
-pre, a, abbr, acronym, address, big, cite,
-code, del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var, b,
-u, i, center, dl, dt, dd, ol, ul, li, fieldset,
-form, label, legend, table, caption, tbody,
-tfoot, thead, tr, th, td, article, aside,
-canvas, details, embed, figure, figcaption,
-footer, header, hgroup, menu, nav, output, ruby,
-section, summary, time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;}
-
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-	display: block;}
-
-body {
-	line-height: 1;
+/* GLOBAL TEXT COLORS: White/Black/Standard text to #633b07 */
+body, input, select, textarea, h1, h2, h3, h4, h5, h6, strong, b, p, li {
+	font-family: "Merriweather", Georgia, serif;
+	color: #633b07 !important;
 }
 
-ol, ul {
-	list-style: none;
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Source Sans Pro", Helvetica, sans-serif;
+	font-weight: 900;
+	text-transform: uppercase;
 }
 
-blockquote, q {
-	quotes: none;
+a {
+	color: #633b07;
+	text-decoration: none;
+	transition: color 0.2s ease-in-out;
+	border-bottom: dotted 1px rgba(99, 59, 7, 0.5);
 }
 
-	blockquote:before, blockquote:after, q:before, q:after {
-		content: '';
-		content: none;
-	}
+a:hover { color: #3c71cc !important; border-bottom-color: transparent; }
 
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
+/* DARK SECTIONS: Gray/Black areas to #b39d85 */
+#header, #nav, #footer, #intro, #main, .post, #copyright, .major-header {
+	background-color: #b39d85 !important;
 }
 
-body {
-	-webkit-text-size-adjust: none;
-}
+/* BACKGROUND IMAGE LOGIC */
+body { background-image: url("../images/bg.jpg"); } /* Current on Styles & Pricing */
+body.alt-bg { background-image: url("../images/bg2.jpg") !important; } /* On How to Order / About Me */
 
-mark {
-	background-color: transparent;
-	color: inherit;
-}
+/* PAGE SPECIFIC ACCENTS (#3c71cc) */
+.style-name, .style-name a { color: #3c71cc !important; }
+.step-line { color: #3c71cc !important; }
 
-input::-moz-focus-inner {
-	border: 0;
-	padding: 0;
-}
+/* Template Structure (Massively Default) */
+html { font-size: 16pt; box-sizing: border-box; }
+*, *:before, *:after { box-sizing: inherit; }
+#wrapper { background-color: transparent; }
+#nav ul.links li.active { background-color: #633b07; }
+#nav ul.links li.active a { color: #b39d85 !important; }
 
-input, select, textarea {
-	-moz-appearance: none;
-	-webkit-appearance: none;
-	-ms-appearance: none;
-	appearance: none;
-}
-
-/* Basic */
-
-	@-ms-viewport {
-		width: device-width;
-	}
-
-	body {
-		-ms-overflow-style: scrollbar;
-	}
-
-	@media screen and (max-width: 480px) {
-
-		html, body {
-			min-width: 320px;
-		}
-
-	}
-
-	html {
-		box-sizing: border-box;
-	}
-
-	*, *:before, *:after {
-		box-sizing: inherit;
-	}
-
-	body {
-		background-color: #ffffff; /* Fallback */
-	}
-
-		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
-			-moz-animation: none !important;
-			-webkit-animation: none !important;
-			-ms-animation: none !important;
-			animation: none !important;
-			-moz-transition: none !important;
-			-webkit-transition: none !important;
-			-ms-transition: none !important;
-			transition: none !important;
-		}
-
-/* Type */
-
-	html {
-		font-size: 16pt;
-	}
-
-		@media screen and (max-width: 1680px) {
-			html { font-size: 12pt; }
-		}
-
-		@media screen and (max-width: 1280px) {
-			html { font-size: 11pt; }
-		}
-
-		@media screen and (max-width: 360px) {
-			html { font-size: 10pt; }
-		}
-
-	/* Text Color Change: White/Black text to #633b07 */
-	body, input, select, textarea, h1, h2, h3, h4, h5, h6, strong, b {
-		font-family: "Merriweather", Georgia, serif;
-		font-weight: 300;
-		font-size: 1rem;
-		line-height: 2.375;
-		color: #633b07; 
-	}
-
-	a {
-		color: #633b07;
-		border-bottom: dotted 1px rgba(99, 59, 7, 0.5);
-		text-decoration: none;
-		transition: color 0.2s ease-in-out;
-	}
-
-	a:hover {
-		border-bottom-color: transparent;
-		color: #3c71cc !important;
-	}
-
-	p {
-		text-align: justify;
-		margin: 0 0 2rem 0;
-		color: #633b07;
-	}
-
-	h1, h2, h3, h4, h5, h6 {
-		font-family: "Source Sans Pro", Helvetica, sans-serif;
-		font-weight: 900;
-		line-height: 1.5;
-		letter-spacing: 0.075em;
-		text-transform: uppercase;
-		margin: 0 0 1rem 0;
-		color: #633b07;
-	}
-
-/* Background Color Change: Gray/Black areas to #b39d85 */
-	#header, #nav, #main, #footer, #intro {
-		background-color: #b39d85;
-		color: #633b07;
-	}
-
-	#intro p, #intro h1 {
-		color: #633b07;
-	}
-
-/* Background Images Logic */
-
-	/* Default Background (Styles & Pricing) */
-	body {
-		background-image: url("../images/bg.jpg");
-		background-attachment: fixed;
-		background-size: cover;
-	}
-
-	/* Alternative Background (How to Order / About Me) */
-	body.alt-page {
-		background-image: url("../images/bg2.jpg");
-	}
-
-/* Page Specific Text Colors */
-
-	/* Styles & Pricing Page: Style names to Blue */
-	/* Assuming Style Names are H3s inside the main section */
-	#main .post h3 {
-		color: #3c71cc;
-	}
-
-	/* How to Order Page: Step lines to Blue */
-	/* Targets list items and headers specifically on the alternate page */
-	body.alt-page ol li, 
-	body.alt-page ul.steps li,
-	body.alt-page .step-heading {
-		color: #3c71cc;
-	}
-
-/* Layout Tweaks for the Template */
-	#wrapper {
-		background-color: transparent;
-	}
-
-	#nav ul.links li.active {
-		background-color: #633b07;
-	}
-
-	#nav ul.links li.active a {
-		color: #b39d85 !important;
-	}
-
-	.button {
-		border-color: #633b07;
-		color: #633b07 !important;
-	}
-
-	.button.primary {
-		background-color: #633b07;
-		color: #b39d85 !important;
-	}
-
-/* --- Original Grid/Row Logic Continues --- */
-
-	.row {
-		display: flex;
-		flex-wrap: wrap;
-		box-sizing: border-box;
-		align-items: stretch;
-		margin-left: -1.5rem;
-	}
-
-	.row > * {
-		padding-left: 1.5rem;
-		box-sizing: border-box;
-	}
-
-    /* Additional template structural CSS omitted for brevity but 
-       this file replaces your main.css entirely */
+/* Grid and Rows */
+.row { display: flex; flex-wrap: wrap; box-sizing: border-box; align-items: stretch; margin-left: -1.5rem; }
+.row > * { padding-left: 1.5rem; box-sizing: border-box; }
